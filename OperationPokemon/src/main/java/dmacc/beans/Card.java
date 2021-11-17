@@ -30,6 +30,6 @@ public class Card {
 	private boolean isGX;
 	private boolean isEX;
 	private boolean isMega;
-	List <Move> moveListl;
+	List <Move> moveList;
 	private String ability;
 }
