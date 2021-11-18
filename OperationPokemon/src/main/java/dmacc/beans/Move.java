@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Move {
 	@Id
 	@GeneratedValue
@@ -22,4 +24,9 @@ public class Move {
 	private String name;
 	private String description;
 	private String energyCost;
+	public Move (String name, String description, String energyCost) {
+		this.name = name;
+		this.description = description;
+		this.energyCost = energyCost;
+	}
 }
