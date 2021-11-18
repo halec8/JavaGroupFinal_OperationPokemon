@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import dmacc.beans.Buyer;
+import dmacc.beans.Card;
 import dmacc.beans.Contact;
+import dmacc.beans.Seller;
 import dmacc.repository.OperationPokemonRepository;
 
 /**
