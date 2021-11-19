@@ -14,8 +14,6 @@ import dmacc.repository.CardRepository;
 import dmacc.repository.OperationPokemonRepository;
 
 
-OperationPokemonRepository;
-
 /**
  * @author AndrewDowd - adowd1
  * CIS175 - Fall 2021
@@ -128,7 +126,7 @@ public class WebController {
 	public String showUpdateBuyer(@PathVariable("id") long id, Model model) {
 		Buyer b = buyerRepo.findById(id).orElse(null);
 	    System.out.println("ITEM TO EDIT: " + b.toString());
-	    model.addAttribute("newBuyer", b)
+	    model.addAttribute("newBuyer", b);
         return "input";
 	    }
 		
