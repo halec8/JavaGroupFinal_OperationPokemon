@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Card {
 	@Id
 	@GeneratedValue
@@ -32,4 +34,17 @@ public class Card {
 	private boolean isMega;
 	List <Move> moveList;
 	private String ability;
+	public Card (double price, String name, int hp, String pokemonType, boolean isCardJumbo, String cardType, boolean isGX, boolean isEX, boolean isMega, List<Move> moveList, String ability) {
+		this.price = price;
+		this.name = name;
+		this.hp = hp;
+		this.pokemonType = pokemonType;
+		this.isCardJumbo = isCardJumbo;
+		this.cardType = cardType;
+		this.isGX = isGX;
+		this.isEX = isEX;
+		this.isMega = isMega;
+		this.moveList = moveList;
+		this.ability = ability;
+	}
 }
