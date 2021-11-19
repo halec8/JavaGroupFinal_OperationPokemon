@@ -19,9 +19,7 @@ public class Seller {
 	@GeneratedValue
 	private long id;
 	private String name;
-	private String relationship;
-	@Autowired
-	private BuyerShippingAddress buyerShippingAddress;
+	private String phoneNumber;
 
 
 
@@ -34,16 +32,16 @@ public class Seller {
 	this.name = name;
 	
 	}
-	public Seller(String name, String relationship) {
+	public Seller(String name, String phoneNumber) {
 	super();
 	this.name = name;
-	this.relationship = relationship;
+	this.phoneNumber = phoneNumber;
 	}
-	public Seller(int id, String name, String relationship) {
+	public Seller(int id, String name, String phoneNumber) {
 
 		this.id = id;
 		this.name = name;
-		this.relationship = relationship;
+		this.phoneNumber = phoneNumber;
 	}
 	/**
 	 * @return the id
@@ -69,35 +67,21 @@ public class Seller {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	/**
-	 * @return the relationship
+	 * @return the phoneNumber
 	 */
-	public String getRelationship() {
-		return relationship;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 	/**
-	 * @param relationship the relationship to set
+	 * @param phoneNumber the phoneNumber to set
 	 */
-	public void setRelationship(String relationship) {
-		this.relationship = relationship;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-	
-	/**
-	 * @return the buyerShippingAddress
-	 */
-	public BuyerShippingAddress getBuyerShippingAddress() {
-		return buyerShippingAddress;
-	}
-	/**
-	 * @param buyerShippingAddress the buyerShippingAddress to set
-	 */
-	public void setBuyerShippingAddress(BuyerShippingAddress buyerShippingAddress) {
-		this.buyerShippingAddress = buyerShippingAddress;
-		}
-	
-	
 	@Override
 	public String toString() {
-		return "Seller [id: " + id + ", name: " + name + ", relationship: " + relationship + "buyer shipping address:" + buyerShippingAddress+  "]";
+		return "Seller [id: " + id + ", name: " + name + "phone number: " + "]";
 		}
 	}

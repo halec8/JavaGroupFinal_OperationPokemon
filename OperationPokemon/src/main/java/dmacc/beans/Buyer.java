@@ -1,5 +1,7 @@
 package dmacc.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author Cody Hale - chale
  * CIS175 - Fall 2021
@@ -10,6 +12,8 @@ public class Buyer {
 	private long id;
 	private String name;
 	private String relationship;
+	@Autowired
+	BuyerShippingAddress buyerShippingAddress;
 
 	public Buyer() {
 		super();
@@ -68,8 +72,21 @@ public class Buyer {
 			this.relationship = relationship;
 		}
 		
+		/**
+		 * @return the buyerShippingAddress
+		 */
+		public BuyerShippingAddress getBuyerShippingAddress() {
+			return buyerShippingAddress;
+		}
+		/**
+		 * @param buyerShippingAddress the buyerShippingAddress to set
+		 */
+		public void setBuyerShippingAddress(BuyerShippingAddress buyerShippingAddress) {
+			this.buyerShippingAddress = buyerShippingAddress;
+			}
+		
 		@Override
 		public String toString() {
-			return "Buyer [id: " + id + ", name: " + name + ", relationship: " + relationship + "]";
+			return "Buyer [id: " + id + ", name: " + name + ", relationship: " + relationship + "buyer shipping address:" + buyerShippingAddress +  "]";
 			}
 }
