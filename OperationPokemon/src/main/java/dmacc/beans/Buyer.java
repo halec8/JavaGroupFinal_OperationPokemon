@@ -1,5 +1,7 @@
 package dmacc.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author Cody Hale - chale
  * CIS175 - Fall 2021
@@ -10,6 +12,7 @@ public class Buyer {
 	private long id;
 	private String name;
 	private String relationship;
+	@Autowired
 	BuyerShippingAddress buyerShippingAddress;
 
 	public Buyer() {
