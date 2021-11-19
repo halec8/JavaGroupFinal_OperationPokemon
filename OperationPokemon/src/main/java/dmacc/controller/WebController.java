@@ -41,8 +41,8 @@ public class WebController {
 	@GetMapping("/edit/{id}")
     public String showUpdateSeller(@PathVariable("id") long id, Model model) {
         Seller s = repo.findById(id).orElse(null);
-        System.out.println("ITEM TO EDIT: " + c.toString());
-        model.addAttribute("newSeller", c);
+        System.out.println("ITEM TO EDIT: " + s.toString());
+        model.addAttribute("newSeller", s);
         return "input";
     }
 	
@@ -55,7 +55,7 @@ public class WebController {
 	@GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
         Seller s = repo.findById(id).orElse(null);
-        repo.delete(c);
+        repo.delete(s);
         return viewAllSellers(model);
 	}
 	// end of the seller methods
@@ -114,20 +114,20 @@ public class WebController {
 	@GetMapping("/edit/{id}")
 	public String showUpdateBuyer(@PathVariable("id") long id, Model model) {
 		Buyer b = repo.findById(id).orElse(null);
-	    System.out.println("ITEM TO EDIT: " + c.toString());
-	    model.addAttribute("newBuyer", c);
+	    System.out.println("ITEM TO EDIT: " + b.toString());
+	    model.addAttribute("newBuyer", b);
         return "input";
 	    }
 		
 	@PostMapping("/update/{id}")
     public String reviseBuyer(Buyer b, Model model) {
-		repo.save(c);
+		repo.save(b);
 		return viewAllBuyers(model);
     }
 	@GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id, Model model) {
 	    Buyer b = repo.findById(id).orElse(null);
-	    repo.delete(c);
+	    repo.delete(b);
 	    return viewAllBuyers(model);
 	}
 	// end of the buyer methods
