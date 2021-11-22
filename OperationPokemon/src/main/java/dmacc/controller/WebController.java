@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import dmacc.beans.Seller;
 import dmacc.repository.OperationPokemonRepository;
+
 
 /**
  * @author AndrewDowd - adowd1
@@ -53,12 +55,13 @@ public class WebController {
     }
 	
 	@GetMapping("/delete/{id}")
-    public String deleteSeller(@PathVariable("id") long id, Model model) {
+     public String deleteSeller(@PathVariable("id") long id, Model model) {
         Seller s = sellerRepo.findById(id).orElse(null);
         sellerRepo.delete(s);
         return viewAllSellers(model);
 	}
 	// end of the seller methods
+
 
 }
 

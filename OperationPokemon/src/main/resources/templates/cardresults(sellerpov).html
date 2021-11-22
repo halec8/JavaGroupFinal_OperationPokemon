@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cards for seller listings</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentCard : ${cards}">
+		<td th:text="${currentCard.id}"/>
+		<td th:text="${currentCard.name}"/>
+		<td th:text="${currentCard.price}"/>
+		<td th:text="${currentCcard.isCardJumbo}"/>
+		<td th:text="${currentCard.isGX}"/>
+		<td th:text="${currentCard.isEX}"/>
+		<td th:text="${currentCard.isMega}"/>
+		<td><a th:href="@{/edit/{id}(id=${currentCard.id})}">Edit</a></td>
+		<td><a th:href="@{/delete/{id}(id=${currentCard.id})}">Delete</a></td>
+
+</tr>
+</table>
+</form>
+</body>
+</html>
