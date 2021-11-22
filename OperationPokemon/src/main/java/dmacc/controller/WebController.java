@@ -17,7 +17,7 @@ import dmacc.repository.OperationPokemonRepository;
  */
 
 @Controller
-public class SellerWebController {
+public class WebController {
 	@Autowired
 	OperationPokemonRepository sellerRepo;
 
@@ -63,3 +63,4 @@ public class SellerWebController {
 
 
 }
+
