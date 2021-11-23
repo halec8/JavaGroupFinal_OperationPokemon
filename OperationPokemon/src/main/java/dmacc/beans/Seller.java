@@ -1,10 +1,14 @@
 package dmacc.beans;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Cody Hale - chale
@@ -13,6 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Seller {
 	
 	@Id
@@ -21,12 +28,6 @@ public class Seller {
 	private String name;
 	private String phoneNumber;
 
-
-
-	public Seller() {
-	super();
-	
-	}
 	public Seller(String name) {
 	super();
 	this.name = name;
@@ -43,45 +44,4 @@ public class Seller {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 	}
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the phoneNumber
-	 */
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	/**
-	 * @param phoneNumber the phoneNumber to set
-	 */
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	@Override
-	public String toString() {
-		return "Seller [id: " + id + ", name: " + name + "phone number: " + "]";
-		}
-	}
+}
