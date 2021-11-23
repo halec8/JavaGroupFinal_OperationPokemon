@@ -1,12 +1,23 @@
 package dmacc.beans;
 
+import javax.persistence.Entity;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Cody Hale - chale
  * CIS175 - Fall 2021
  * Nov 15, 2021
  */
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Buyer {
 	
 	private long id;
@@ -15,10 +26,7 @@ public class Buyer {
 	@Autowired
 	BuyerShippingAddress buyerShippingAddress;
 
-	public Buyer() {
-		super();
-		
-		}
+	
 		public Buyer(String name) {
 		super();
 		this.name = name;
@@ -35,58 +43,4 @@ public class Buyer {
 			this.name = name;
 			this.relationship = relationship;
 		}
-		/**
-		 * @return the id
-		 */
-		public long getId() {
-			return id;
-		}
-		/**
-		 * @param id the id to set
-		 */
-		public void setId(long id) {
-			this.id = id;
-		}
-		/**
-		 * @return the name
-		 */
-		public String getName() {
-			return name;
-		}
-		/**
-		 * @param name the name to set
-		 */
-		public void setName(String name) {
-			this.name = name;
-		}
-		/**
-		 * @return the relationship
-		 */
-		public String getRelationship() {
-			return relationship;
-		}
-		/**
-		 * @param relationship the relationship to set
-		 */
-		public void setRelationship(String relationship) {
-			this.relationship = relationship;
-		}
-		
-		/**
-		 * @return the buyerShippingAddress
-		 */
-		public BuyerShippingAddress getBuyerShippingAddress() {
-			return buyerShippingAddress;
-		}
-		/**
-		 * @param buyerShippingAddress the buyerShippingAddress to set
-		 */
-		public void setBuyerShippingAddress(BuyerShippingAddress buyerShippingAddress) {
-			this.buyerShippingAddress = buyerShippingAddress;
-			}
-		
-		@Override
-		public String toString() {
-			return "Buyer [id: " + id + ", name: " + name + ", relationship: " + relationship + "buyer shipping address:" + buyerShippingAddress +  "]";
-			}
 }
