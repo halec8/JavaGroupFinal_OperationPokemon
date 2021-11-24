@@ -15,8 +15,10 @@ import dmacc.repository.CardRepository;
  * CIS175 - Fall 2021
  * Nov 21, 2021
  */
+
+
 @Controller
-public class CardWebController {
+	public class CardWebController {
 	@Autowired
 	CardRepository cardRepo;
 	@GetMapping("/viewAllCards")
@@ -25,7 +27,7 @@ public class CardWebController {
 			return addNewCard(model);
 	}
 	model.addAttribute("cards", cardRepo.findAll());
-	return "results";
+	return "results"; 
 	}
 	@GetMapping("/inputCard")
 	public String addNewCard(Model model) {
@@ -55,3 +57,5 @@ public class CardWebController {
         return viewAllCards(model);
 	}
 }
+	
+
