@@ -18,7 +18,7 @@ import dmacc.repository.CardRepository;
 
 
 @Controller
-	public class CardWebController {
+public class CardWebController {
 	@Autowired
 	CardRepository cardRepo;
 	@GetMapping("/viewAllCards")

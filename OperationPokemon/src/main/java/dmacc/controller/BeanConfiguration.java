@@ -3,6 +3,8 @@ package dmacc.controller;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import dmacc.beans.Buyer;
+import dmacc.beans.Card;
 import dmacc.beans.Seller;
 
 /**
@@ -21,5 +23,14 @@ public class BeanConfiguration {
 		//bean.setRelationship("seller");
 		return bean;
 	}
-
+	@Bean
+	public Buyer buyer() {
+		Buyer bean = new Buyer ();
+		return bean;
+	}
+	@Bean
+	public Card card() {
+		Card bean = new Card();
+		return bean;
+	}
 }
