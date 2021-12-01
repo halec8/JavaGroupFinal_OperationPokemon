@@ -5,6 +5,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form>
+<table>
+<tr th:each="currentCard : ${cards}">
+		<td th:text="${currentCard.id}"/>
+		<td th:text="${currentCard.name}"/>
+		<td th:text="${currentCard.price}"/>
+		<td th:text="${currentCcard.isCardJumbo}"/>
+		<td th:text="${currentCard.isGX}"/>
+		<td th:text="${currentCard.isEX}"/>
+		<td th:text="${currentCard.isMega}"/>
+</tr>
+</table>
+</form>
 </body>
 </html>
