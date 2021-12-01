@@ -1,14 +1,21 @@
 package dmacc.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import dmacc.beans.Card;
 import dmacc.beans.Seller;
+import dmacc.beans.SellerCardList;
+import dmacc.repository.CardRepository;
 import dmacc.repository.OperationPokemonRepository;
+import dmacc.repository.SellerCardListRepository;
 
 
 /**
@@ -18,11 +25,18 @@ import dmacc.repository.OperationPokemonRepository;
  */
 
 @Controller
-public class WebController {
+@RequestMapping("sellerController")
+public class SellerController {
 	@Autowired
 	OperationPokemonRepository sellerRepo;
-
-
+	@Autowired
+	SellerCardListRepository SCLRepo;
+	@Autowired
+	CardRepository cardRepo;
+	@GetMapping("/")
+	public String index (Model model) {
+		return "index";
+	}
 	//the seller methods of the web controller
 	@GetMapping("/viewAllSellers")
 	public String viewAllSellers(Model model) {
@@ -60,8 +74,32 @@ public class WebController {
         sellerRepo.delete(s);
         return viewAllSellers(model);
 	}
+	@GetMapping("/inputsellerlist")
+	public String inputSellerList (Model model) {
+		List<Seller> sellerList = sellerRepo.findAll();
+		model.addAttribute("sellerList", sellerList);
+		List<Card> cardList = cardRepo.findAll();
+		model.addAttribute("allCardsToAdd", cardList);
+		return "inputlist";
+	}
+	@PostMapping("/inputsellerlist")
+	public String addSellerList (Model model) {
+		SellerCardList SCL = new SellerCardList();
+		SCLRepo.save(SCL);
+		return viewAllCardLists(model);
+	}
+	/**
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/viewcardlists")
+	private String viewAllCardLists(Model model) {
+		// TODO Auto-generated method stub
+		List<SellerCardList> SCLList = SCLRepo.findAll();
+		model.addAttribute("SCLList", SCLList);
+		return "viewcardlists";
+	}
+
 	// end of the seller methods
-
-
 }
 
