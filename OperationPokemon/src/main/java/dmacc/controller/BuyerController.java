@@ -28,13 +28,13 @@ public class BuyerController {
 			return addNewBuyer(model);
 		}
 		model.addAttribute("buyers", buyerRepo.findAll());
-		return "results";
+		return "buyerresults";
 		}
 	@GetMapping("/inputBuyer")
 	public String addNewBuyer(Model model) {
 		Buyer b = new Buyer();
 		model.addAttribute("newBuyer", b);
-		return "input";
+		return "inputbuyer";
 	}
 			
 	@GetMapping("/edit/{id}")
@@ -42,7 +42,7 @@ public class BuyerController {
 		Buyer b = buyerRepo.findById(id).orElse(null);
 		System.out.println("ITEM TO EDIT: " + b.toString());
 		model.addAttribute("newBuyer", b);
-	    return "input";
+	    return "inputbuyer";
 		}
 			
 	@PostMapping("/update/{id}")

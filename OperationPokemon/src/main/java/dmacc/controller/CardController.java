@@ -29,13 +29,13 @@ public class CardController {
 			return addNewCard(model);
 	}
 	model.addAttribute("cards", cardRepo.findAll());
-	return "results"; 
+	return "cardsresults"; 
 	}
 	@GetMapping("/inputCard")
 	public String addNewCard(Model model) {
 		Card c = new Card();
 		model.addAttribute("newCard", c);
-		return "input";
+		return "inputcard";
 	}
 	
 	@GetMapping("/edit/{id}")
@@ -43,7 +43,7 @@ public class CardController {
         Card c = cardRepo.findById(id).orElse(null);
         System.out.println("ITEM TO EDIT: " + c.toString());
         model.addAttribute("newCard", c);
-        return "input";
+        return "inputcard";
     }
 	
 	@PostMapping("/update/{id}")
