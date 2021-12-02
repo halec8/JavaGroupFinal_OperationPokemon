@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 
 import dmacc.beans.Buyer;
 import dmacc.beans.Card;
+import dmacc.beans.Move;
 import dmacc.beans.Seller;
+import dmacc.beans.SellerCardList;
 
 /**
  * @author Cody Hale - chale
@@ -19,8 +21,7 @@ public class BeanConfiguration {
 	@Bean
 	public Seller seller() {
 		Seller bean = new Seller();
-		//bean.setName("Cody Hale");
-		//bean.setRelationship("seller");
+		
 		return bean;
 	}
 	@Bean
@@ -28,9 +29,16 @@ public class BeanConfiguration {
 		Buyer bean = new Buyer ();
 		return bean;
 	}
+	
 	@Bean
 	public Card card() {
 		Card bean = new Card();
+		return bean;
+	}
+	
+	@Bean
+	public SellerCardList sellerCardList() {
+		SellerCardList bean = new SellerCardList();
 		return bean;
 	}
 }
