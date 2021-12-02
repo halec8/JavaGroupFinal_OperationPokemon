@@ -44,14 +44,14 @@ public class SellerController {
 			return addNewSeller(model);
 	}
 	model.addAttribute("sellers", sellerRepo.findAll());
-	return "results";
+	return "sellerresults";
 	}
 	
 	@GetMapping("/inputSeller")
 	public String addNewSeller(Model model) {
 		Seller s = new Seller();
 		model.addAttribute("newSeller", s);
-		return "input";
+		return "inputseller";
 	}
 	
 	@GetMapping("/edit/{id}")
@@ -59,7 +59,7 @@ public class SellerController {
         Seller s = sellerRepo.findById(id).orElse(null);
         System.out.println("ITEM TO EDIT: " + s.toString());
         model.addAttribute("newSeller", s);
-        return "input";
+        return "inputseller";
     }
 	
 	@PostMapping("/update/{id}")
