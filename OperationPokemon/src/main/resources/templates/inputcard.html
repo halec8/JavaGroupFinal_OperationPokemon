@@ -1,22 +1,57 @@
 <!-- Made By Andrew Dowd, adowd1, 11/16/21-->
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Input Card</title>
 </head>
+<script type="text/javascript">
+
+function checkForm(form)
+{
+	if(form.name.value == ""){
+		alert("Error: Card name input is empty!");
+		form.name.focus();
+		return false;
+	}
+	
+	if(form.price.value == ""){
+		alert("Error: Price input is empty!");
+		form.phone.focus();
+		return false;
+	}
+	
+	var re = /^[\w ]+$/;
+	
+
+	if(!re.test(form.name.value)){
+		alert("Error: Name input contains invalid characters!");
+		form.name.focus();
+		return false;
+	}
+	
+	var x = form.price.value;
+	
+	if((x%1) != 0){
+		alert("Error: The Price isn't a number");
+		form.price.focus();
+		return false;
+	}
+	
+	return true;
+}
+
+</script>
 <body>
 
-<!-- To add input validation for all the input fields next week -->
 <form name="form" th:object="${newCard}" th:action= "@{/update/{id}(id=${newCard.id})}" method=POST action="form-handler" onsubmit="return checkForm(this);">
 <p>Card Info:</p>
 Name: <input type="text" name="name" size="20" th:field="*{name}"><br />
-Price: <input type="text" name="phone" size="20" th:field="*{price}"><br />
+Price: <input type="text" name="price" size="20" th:field="*{price}"><br />
 Jumbo Card: <input type="text" name="isCardJumbo" size="20" th:field="*{isCardJumbo}"><br />
 Gx: <input type="text" name="ixGX" size="20" th:field="*{isGX}"><br />
-Ex: <input type="text" name="isEX" size="20" th:field="*{isEX}"><br /> 
+Ex: <input type="text" name="isEX" size="20" th:field="*{isEX}"><br />
 Mega: <input type="text" name="isMega" size="20" th:field="*{isMega}"><br />
-
 <input name= "submit" type="submit" value="submit"/>
 </form>
 </body>
