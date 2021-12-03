@@ -6,6 +6,7 @@
 </head>
 <body>
 <form name="form" th:object="${newList}" th:action="addSellerList"  method=POST action="form-handler">
+<span th:text = "${seller.name}"></span>
 <select name ="allCardsToAdd" multiple size = "20">
 <th:foreach items = "${requestScope.allCards}" var ="currentcard">
 <option value = "${currentcard.id}"> ${currentcard.name}, ${currentcard.price}, ${currentcard.isEX}, ${curretcard.isGX}, ${currentcard.isMega}, ${currentcard.isJumbo} </option>
