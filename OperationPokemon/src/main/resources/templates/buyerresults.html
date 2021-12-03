@@ -7,14 +7,12 @@
 <body>
 <form>
 <table>
-<tr th:each="currentCard : ${cards}">
-		<td th:text="${currentCard.id}"/>
-		<td th:text="${currentCard.name}"/>
-		<td th:text="${currentCard.price}"/>
-		<td th:text="${currentCcard.isCardJumbo}"/>
-		<td th:text="${currentCard.isGX}"/>
-		<td th:text="${currentCard.isEX}"/>
-		<td th:text="${currentCard.isMega}"/>
+<tr th:each="currentBuyer : ${buyers}">
+		<td th:text="${currentBuyer.id}"/>
+		<td th:text="${currentBuyer.name}"/>
+		<td th:text="${currentBuyer.street}"/>
+		<td th:text="${currentBuyer.city}"/>
+		<td th:text="${currentBuyer.state}"/>
 </tr>
 </table>
 </form>

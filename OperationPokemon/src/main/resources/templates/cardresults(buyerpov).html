@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Buyer Card Results Page</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentCard : ${cards}">
+		<td th:text="${currentCard.id}"/>
+		<td th:text="${currentCard.name}"/>
+		<td th:text="${currentCard.price}"/>
+		<td th:text="${currentCard.isCardJumbo}"/>
+		<td th:text="${currentCard.isGX}"/>
+		<td th:text="${currentCard.isEX}"/>
+		<td th:text="${currentCard.isMega}"/>
+</tr>
+</table>
+</form>
+</body>
+</html>
