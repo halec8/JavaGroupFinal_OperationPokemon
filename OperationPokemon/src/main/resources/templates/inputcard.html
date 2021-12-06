@@ -48,10 +48,32 @@ function checkForm(form)
 <p>Card Info:</p>
 Name: <input type="text" name="name" size="20" th:field="*{name}"><br />
 Price: <input type="text" name="price" size="20" th:field="*{price}"><br />
-Jumbo Card: <input type="text" name="isCardJumbo" size="20" th:field="*{isCardJumbo}"><br />
-Gx: <input type="text" name="ixGX" size="20" th:field="*{isGX}"><br />
-Ex: <input type="text" name="isEX" size="20" th:field="*{isEX}"><br />
-Mega: <input type="text" name="isMega" size="20" th:field="*{isMega}"><br />
+
+<label for="isCardJumbo">Is the card a Jumbo card:</label>
+<select name="isCardJumbo" id="isCardJumbo">
+  <option value="False">No</option>
+  <option value="True">Yes</option>
+</select>
+
+<label for="isGX">Is the card a GX card:</label>
+<select name="isGX" id="isGX">
+  <option value="False">No</option>
+  <option value="True">Yes</option>
+</select>
+
+<label for="isEX">Is the card a EX card:</label>
+<select name="isEX" id="isEX">
+  <option value="False">No</option>
+  <option value="True">Yes</option>
+</select>
+
+
+<label for="isMega">Is the card a Mega card:</label>
+<select name="isMega" id="isMega">
+  <option value="False">No</option>
+  <option value="True">Yes</option>
+</select>
+
 <input name= "submit" type="submit" value="submit"/>
 </form>
 </body>
