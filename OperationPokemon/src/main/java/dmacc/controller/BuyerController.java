@@ -22,7 +22,7 @@ public class BuyerController {
 	@Autowired
 	BuyerRepository buyerRepo;
 	//the buyer methods of the web controller
-	@GetMapping("/viewAllBuyers")
+	@GetMapping("viewAllBuyers")
 	public String viewAllBuyers(Model model) {
 		if(buyerRepo.findAll().isEmpty()) {
 			return addNewBuyer(model);
@@ -30,7 +30,7 @@ public class BuyerController {
 		model.addAttribute("buyers", buyerRepo.findAll());
 		return "buyerresults";
 		}
-	@GetMapping("/inputBuyer")
+	@GetMapping("inputBuyer")
 	public String addNewBuyer(Model model) {
 		Buyer b = new Buyer();
 		model.addAttribute("newBuyer", b);
