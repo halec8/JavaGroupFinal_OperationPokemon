@@ -28,20 +28,4 @@ public class Seller {
 	private String name;
 	private String phoneNumber;
 
-	public Seller(String name) {
-	super();
-	this.name = name;
-	
-	}
-	public Seller(String name, String phoneNumber) {
-	super();
-	this.name = name;
-	this.phoneNumber = phoneNumber;
-	}
-	public Seller(int id, String name, String phoneNumber) {
-
-		this.id = id;
-		this.name = name;
-		this.phoneNumber = phoneNumber;
-	}
 }
