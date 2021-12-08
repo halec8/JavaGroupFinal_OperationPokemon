@@ -38,7 +38,7 @@ public class SellerController {
 		return "index";
 	}
 	//the seller methods of the web controller
-	@GetMapping("/viewAllSellers")
+	@GetMapping("viewAllSellers")
 	public String viewAllSellers(Model model) {
 		if(sellerRepo.findAll().isEmpty()) {
 			return addNewSeller(model);
@@ -47,7 +47,7 @@ public class SellerController {
 	return "sellerresults";
 	}
 	
-	@GetMapping("/inputSeller")
+	@GetMapping("inputSeller")
 	public String addNewSeller(Model model) {
 		Seller s = new Seller();
 		model.addAttribute("newSeller", s);
@@ -74,7 +74,7 @@ public class SellerController {
         sellerRepo.delete(s);
         return viewAllSellers(model);
 	}
-	@GetMapping("/inputsellerlist")
+	@GetMapping("inputsellerlist")
 	public String inputSellerList (Model model) {
 		List<Seller> sellerList = sellerRepo.findAll();
 		model.addAttribute("sellerList", sellerList);
@@ -82,7 +82,7 @@ public class SellerController {
 		model.addAttribute("allCardsToAdd", cardList);
 		return "inputlist";
 	}
-	@PostMapping("/inputsellerlist")
+	@PostMapping("inputsellerlist")
 	public String addSellerList (Model model) {
 		SellerCardList SCL = new SellerCardList();
 		SCLRepo.save(SCL);
@@ -92,7 +92,7 @@ public class SellerController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/viewcardlists")
+	@GetMapping("viewcardlists")
 	private String viewAllCardLists(Model model) {
 		// TODO Auto-generated method stub
 		List<SellerCardList> SCLList = SCLRepo.findAll();
