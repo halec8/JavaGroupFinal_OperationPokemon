@@ -11,8 +11,8 @@
 		<td th:text="${currentSeller.id}"/>
 		<td th:text="${currentSeller.name}"/>
 		<td th:text="${currentSeller.phone}"/>
-		<td><a th:href="@{/edit/{id}(id=${currentContact.id})}">Edit</a></td>
-		<td><a th:href="@{/delete/{id}(id=${currentContact.id})}">Delete</a></td>
+		<td><a th:href="@{/edit/{id}(id=${currentSeller.id})}">Edit</a></td>
+		<td><a th:href="@{/delete/{id}(id=${currentSeller.id})}">Delete</a></td>
 
 </tr>
 </table>
