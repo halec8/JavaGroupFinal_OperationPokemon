@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,10 +64,15 @@ public class SellerController {
     }
 	
 	@PostMapping("/update/{id}")
-    public String reviseSeller(Seller s, Model model) {
+    public String reviseSeller(@ModelAttribute Seller s, Model model) {
         sellerRepo.save(s);
         return viewAllSellers(model);
     }
+	@PostMapping("inputSeller")
+	public String inputSeller (@ModelAttribute Seller s, Model model) {
+		sellerRepo.save(s);
+		return viewAllSellers(model);
+	}
 	
 	@GetMapping("/delete/{id}")
      public String deleteSeller(@PathVariable("id") long id, Model model) {
@@ -77,8 +83,14 @@ public class SellerController {
 	@GetMapping("inputsellerlist")
 	public String inputSellerList (Model model) {
 		List<Seller> sellerList = sellerRepo.findAll();
+		if(sellerRepo.findAll().isEmpty()) {
+			return addNewSeller(model);
+		}
 		model.addAttribute("sellerList", sellerList);
 		List<Card> cardList = cardRepo.findAll();
+		if(cardRepo.findAll().isEmpty()) {
+			return "inputcard";
+		}
 		model.addAttribute("allCardsToAdd", cardList);
 		return "inputlist";
 	}
@@ -96,6 +108,9 @@ public class SellerController {
 	private String viewAllCardLists(Model model) {
 		// TODO Auto-generated method stub
 		List<SellerCardList> SCLList = SCLRepo.findAll();
+		if(SCLRepo.findAll().isEmpty()) {
+			return inputSellerList(model);
+		}
 		model.addAttribute("SCLList", SCLList);
 		return "viewcardlists";
 	}

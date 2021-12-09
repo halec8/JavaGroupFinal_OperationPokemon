@@ -5,6 +5,18 @@
 <title>Card List Viewer</title>
 </head>
 <body>
-
+<form action="buyList" method = "post">
+<table>
+<tr th:each="currentlist : ${SCLLists}">
+	<td><input type ="radio" name ="id" value="${currentlist.id}"></td>
+	<td><h2>${currentlist.seller.name}</h2></td>
+	<td><h2>@{currentlist.seller.phoneNumber}</h2></td>
+</tr>
+<tr th:each="currentcard : ${currentlist.cardList}">
+<td colspan = "6">
+${currentcard.name}, ${currentcard.price}, isEX ${currentcard.isEX}, isGX ${currentcard.isGX}, isMega ${currentcard.isMega}, is jumbo ${currentcard.isCardJumbo}
+</table>
+<input type = "submit" value = "buy" name = "buyList">
+</form>
 </body>
 </html>
