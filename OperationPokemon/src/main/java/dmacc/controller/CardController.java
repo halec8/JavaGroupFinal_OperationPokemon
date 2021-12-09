@@ -19,7 +19,7 @@ import dmacc.repository.CardRepository;
 
 
 @Controller
-@RequestMapping("cardController")
+@RequestMapping("/cardController")
 public class CardController {
 	@Autowired
 	CardRepository cardRepo;
@@ -29,7 +29,7 @@ public class CardController {
 			return addNewCard(model);
 	}
 	model.addAttribute("cards", cardRepo.findAll());
-	return "cardsresults"; 
+	return "cardresults"; 
 	}
 	@GetMapping("inputCard")
 	public String addNewCard(Model model) {

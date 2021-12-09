@@ -17,7 +17,7 @@ import dmacc.repository.BuyerRepository;
  * Nov 30, 2021
  */
 @Controller
-@RequestMapping("buyerController")
+@RequestMapping("/buyerController")
 public class BuyerController {
 	@Autowired
 	BuyerRepository buyerRepo;
