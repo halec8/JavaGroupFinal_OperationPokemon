@@ -38,7 +38,6 @@ function checkForm(form)
 <form name="form" th:object="${newBuyer}" th:action= "@{/update/{id}(id=${newBuyer.id})}" method=POST action="form-handler" onsubmit="return checkForm(this);">
 <p>Personal Information:</p>
 Name: <input type="text" name="name" size="20" th:field="*{name}"><br />
-Phone Number: <input type="text" name="phone" size="20" th:field="*{phone}"><br />
 <p>Shipping Address:</p>
 Street: <input type="text" name="street" size="20" th:field="*{street}"><br />
 City: <input type="text" name="city" size="20" th:field="*{city}"><br /> 
