@@ -10,9 +10,9 @@
 <tr th:each="currentSeller : ${sellers}">
 		<td th:text="${currentSeller.id}"/>
 		<td th:text="${currentSeller.name}"/>
-		<td th:text="${currentSeller.phone}"/>
-		<td><a th:href="@{/edit/{id}(id=${currentSeller.id})}">Edit</a></td>
-		<td><a th:href="@{/delete/{id}(id=${currentSeller.id})}">Delete</a></td>
+		<td th:text="${currentSeller.phoneNumber}"/>
+		<td><a th:href="@{/sellerController/edit/{id}(id=${currentSeller.id})}">Edit</a></td>
+		<td><a th:href="@{/sellerController/delete/{id}(id=${currentSeller.id})}">Delete</a></td>
 
 </tr>
 </table>

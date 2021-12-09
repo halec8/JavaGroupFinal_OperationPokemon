@@ -26,7 +26,7 @@ import dmacc.repository.SellerCardListRepository;
  */
 
 @Controller
-@RequestMapping("sellerController")
+@RequestMapping("/sellerController")
 public class SellerController {
 	@Autowired
 	OperationPokemonRepository sellerRepo;
@@ -68,7 +68,7 @@ public class SellerController {
         sellerRepo.save(s);
         return viewAllSellers(model);
     }
-	@PostMapping("inputSeller")
+	@PostMapping("inputseller")
 	public String inputSeller (@ModelAttribute Seller s, Model model) {
 		sellerRepo.save(s);
 		return viewAllSellers(model);
@@ -82,6 +82,8 @@ public class SellerController {
 	}
 	@GetMapping("inputsellerlist")
 	public String inputSellerList (Model model) {
+		SellerCardList SCL = new SellerCardList();
+		model.addAttribute("newSCL", SCL);
 		List<Seller> sellerList = sellerRepo.findAll();
 		if(sellerRepo.findAll().isEmpty()) {
 			return addNewSeller(model);
@@ -95,8 +97,7 @@ public class SellerController {
 		return "inputlist";
 	}
 	@PostMapping("inputsellerlist")
-	public String addSellerList (Model model) {
-		SellerCardList SCL = new SellerCardList();
+	public String addSellerList (@ModelAttribute SellerCardList SCL, Model model) {
 		SCLRepo.save(SCL);
 		return viewAllCardLists(model);
 	}
