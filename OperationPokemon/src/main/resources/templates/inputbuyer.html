@@ -14,7 +14,19 @@ function checkForm(form)
 		form.name.focus();
 		return false;
 	}
-	
+	if(form.street.value == ""){
+		alert("Error: Name input is empty!");
+		form.street.focus();
+		return false;
+	}if(form.city.value == ""){
+		alert("Error: City input is empty!");
+		form.city.focus();
+		return false;
+	}if(form.state.value == ""){
+		alert("Error: State input is empty!");
+		form.state.focus();
+		return false;
+	}
 	
 	var re = /^[\w ]+$/;
 	
@@ -25,6 +37,21 @@ function checkForm(form)
 		return false;
 	}
 	
+	if(!re.test(form.street.value)){
+		alert("Error: Street input contains invalid characters!");
+		form.name.focus();
+		return false;
+	}
+	if(!re.test(form.city.value)){
+		alert("Error: City input contains invalid characters!");
+		form.name.focus();
+		return false;
+	}
+	if(!re.test(form.state.value)){
+		alert("Error: State input contains invalid characters!");
+		form.name.focus();
+		return false;
+	}
 	return true;
 }
 
