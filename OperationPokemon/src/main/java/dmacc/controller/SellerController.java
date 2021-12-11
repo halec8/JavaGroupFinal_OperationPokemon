@@ -80,41 +80,6 @@ public class SellerController {
         sellerRepo.delete(s);
         return viewAllSellers(model);
 	}
-	@GetMapping("inputsellerlist")
-	public String inputSellerList (Model model) {
-		SellerCardList SCL = new SellerCardList();
-		model.addAttribute("newSCL", SCL);
-		List<Seller> sellerList = sellerRepo.findAll();
-		if(sellerRepo.findAll().isEmpty()) {
-			return addNewSeller(model);
-		}
-		model.addAttribute("sellerList", sellerList);
-		List<Card> cardList = cardRepo.findAll();
-		if(cardRepo.findAll().isEmpty()) {
-			return "inputcard";
-		}
-		model.addAttribute("allCardsToAdd", cardList);
-		return "inputlist";
-	}
-	@PostMapping("inputsellerlist")
-	public String addSellerList (@ModelAttribute SellerCardList SCL, Model model) {
-		SCLRepo.save(SCL);
-		return viewAllCardLists(model);
-	}
-	/**
-	 * @param model
-	 * @return
-	 */
-	@GetMapping("viewcardlists")
-	private String viewAllCardLists(Model model) {
-		// TODO Auto-generated method stub
-		List<SellerCardList> SCLList = SCLRepo.findAll();
-		if(SCLRepo.findAll().isEmpty()) {
-			return inputSellerList(model);
-		}
-		model.addAttribute("SCLList", SCLList);
-		return "viewcardlists";
-	}
 
 	// end of the seller methods
 }
