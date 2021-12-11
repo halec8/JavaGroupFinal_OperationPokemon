@@ -32,19 +32,6 @@ public class Card {
 	private boolean isGX;
 	private boolean isEX;
 	private boolean isMega;
-	
 	private String ability;
 	
-	public Card (double price, String name, int hp, String pokemonType, boolean isCardJumbo, String cardType, boolean isGX, boolean isEX, boolean isMega, String ability) {
-		this.price = price;
-		this.name = name;
-		this.hp = hp;
-		this.pokemonType = pokemonType;
-		this.isCardJumbo = isCardJumbo;
-		this.cardType = cardType;
-		this.isGX = isGX;
-		this.isEX = isEX;
-		this.isMega = isMega;
-		this.ability = ability;
-	}
 }
