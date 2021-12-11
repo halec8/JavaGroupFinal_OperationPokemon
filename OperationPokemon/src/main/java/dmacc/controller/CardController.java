@@ -74,12 +74,12 @@ public class CardController {
 		model.addAttribute("newSeller", seller);
 		List<Card> cardList = cardRepo.findAll();
 		if(cardRepo.findAll().isEmpty()) {
-			return "inputcard";
+			return addNewCard(model);
 		}
 		model.addAttribute("allCardsToAdd", cardList);
 		return "inputlist";
 	}
-	@PostMapping("inputsellerlist")
+	@PostMapping("inputlist")
 	public String addSellerList (@ModelAttribute Seller seller, @ModelAttribute SellerCardList SCL, Model model) {
 		SCL.setSeller(seller);
 		SCLRepo.save(SCL);
@@ -98,12 +98,6 @@ public class CardController {
 		}
 		model.addAttribute("SCLList", SCLList);
 		return "viewcardlists";
-	}
-	@PostMapping("/update/id}")
-	public String updateList (@ModelAttribute Seller seller, @ModelAttribute SellerCardList scl, Model model) {
-		scl.setSeller(seller);
-		SCLRepo.save(scl);
-		return viewAllCardLists(model);
 	}
 }
 	

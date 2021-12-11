@@ -5,7 +5,7 @@
 <title>Input a New List of Cards</title>
 </head>
 <body>
-<form name="form" th:object="${newSCL}" th:action="@{/update/{id}(id=${newSCL.id})}"  method=POST action="form-handler">
+<form name="form" th:object="${newSCL}" th:action="/cardController/addSellerList.java"  method=POST>
 Seller Name: <input type="text" name="name" >
 Seller Phone Number: <input type="text" name="phoneNumber" >
 <select name ="allCardsToAdd" multiple size = "20">
