@@ -25,13 +25,26 @@ public class Card {
 	private long id;
 	private double price;
 	private String name;
-	//private int hp;
+	private int hp;
 	private String pokemonType;
 	private boolean isCardJumbo;
 	private String cardType;
 	private boolean isGX;
 	private boolean isEX;
 	private boolean isMega;
-	//List <Move> moveList;
+	
 	private String ability;
+	
+	public Card (double price, String name, int hp, String pokemonType, boolean isCardJumbo, String cardType, boolean isGX, boolean isEX, boolean isMega, String ability) {
+		this.price = price;
+		this.name = name;
+		this.hp = hp;
+		this.pokemonType = pokemonType;
+		this.isCardJumbo = isCardJumbo;
+		this.cardType = cardType;
+		this.isGX = isGX;
+		this.isEX = isEX;
+		this.isMega = isMega;
+		this.ability = ability;
+	}
 }
