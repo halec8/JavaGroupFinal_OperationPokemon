@@ -24,9 +24,5 @@ public class Move {
 	private String name;
 	private String description;
 	private String energyCost;
-	public Move (String name, String description, String energyCost) {
-		this.name = name;
-		this.description = description;
-		this.energyCost = energyCost;
-	}
+	
 }
