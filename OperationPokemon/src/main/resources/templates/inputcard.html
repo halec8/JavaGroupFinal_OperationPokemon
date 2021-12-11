@@ -17,10 +17,33 @@ function checkForm(form)
 	
 	if(form.price.value == ""){
 		alert("Error: Price input is empty!");
-		form.phone.focus();
+		form.price.focus();
 		return false;
 	}
 	
+	if(form.isCardJumbo.value != "true" || form.isCardJumbo.value != "false"){
+		alert("Error: The card must be true or false for the jumbo input!");
+		form.isCardJumbo.focus();
+		return false;
+	}
+	
+	if(form.isGX.value != "true" || form.isGX.value != "false"){
+		alert("Error: The card must be true or false for the GX input!");
+		form.isGX.focus();
+		return false;
+	}
+	
+	if(form.isEX.value != "true" || form.isEX.value != "false"){
+		alert("Error: The card must be true or false for the EX input!");
+		form.isEX.focus();
+		return false;
+	}
+	
+	if(form.isMega.value != "true" || form.isMega.value != "false"){
+		alert("Error: The card must be true or false for the Mega input!");
+		form.Mega.focus();
+		return false;
+	}
 	var re = /^[\w ]+$/;
 	
 
@@ -48,31 +71,11 @@ function checkForm(form)
 <p>Card Info:</p>
 Name: <input type="text" name="name" size="20" th:field="*{name}"><br />
 Price: <input type="text" name="price" size="20" th:field="*{price}"><br />
+Is the card a jumbo: <input type="text" name="isJumbo" size="20" th:field="*{isJumbo}"><br />
+Is the card a GX: <input type="text" name="isGX" size="20" th:field="*{isGX}"><br />
+Is the card a EX: <input type="text" name="isEx" size="20" th:field="*{isEX}"><br />
+Is the card a Mega: <input type="text" name="isMega" size="20" th:field="*{isMega}"><br />
 
-<label for="isCardJumbo">Is the card a Jumbo card:</label>
-<select name="isCardJumbo" id="isCardJumbo">
-  <option value="True">Yes</option>
-  <option value="False">No</option>
-</select> <br/>
-
-<label for="isGX">Is the card a GX card:</label>
-<select name="isGX" id="isGX">
-  <option value="True">Yes</option>
-  <option value="False">No</option>
-</select> <br/>
-
-<label for="isEX">Is the card a EX card:</label>
-<select name="isEX" id="isEX"> 
-  <option value="True">Yes</option>
-  <option value="False">No</option>
-</select> <br/>
-
-
-<label for="isMega">Is the card a Mega card:</label>
-<select name="isMega" id="isMega">
-  <option value="True">Yes</option>
-  <option value="False">No</option>
-</select> <br/>
 
 <input name= "submit" type="submit" value="submit"/>
 
