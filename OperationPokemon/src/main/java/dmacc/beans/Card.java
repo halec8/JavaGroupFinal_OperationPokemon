@@ -25,8 +25,8 @@ public class Card {
 	private long id;
 	private double price;
 	private String name;
-	//private int hp;
-	//private String pokemonType;	
+	private int hp;
+	private String pokemonType;	
 	private String cardType;
 	private String isCardJumbo;
 	private String isGX;
