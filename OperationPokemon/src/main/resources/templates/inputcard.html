@@ -41,7 +41,7 @@ function checkForm(form)
 	
 	if(form.isMega.value != "true" && form.isMega.value != "false"){
 		alert("Error: The card must be true or false for the Mega input!");
-		form.Mega.focus();
+		form.isMega.focus();
 		return false;
 	}
 	var re = /^[\w ]+$/;
