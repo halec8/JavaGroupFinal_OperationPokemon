@@ -21,25 +21,25 @@ function checkForm(form)
 		return false;
 	}
 	
-	if(form.isCardJumbo.value != "true" || form.isCardJumbo.value != "false"){
+	if(form.isCardJumbo.value != "true" && form.isCardJumbo.value != "false"){
 		alert("Error: The card must be true or false for the jumbo input!");
 		form.isCardJumbo.focus();
 		return false;
 	}
 	
-	if(form.isGX.value != "true" || form.isGX.value != "false"){
+	if(form.isGX.value != "true" && form.isGX.value != "false"){
 		alert("Error: The card must be true or false for the GX input!");
 		form.isGX.focus();
 		return false;
 	}
 	
-	if(form.isEX.value != "true" || form.isEX.value != "false"){
+	if(form.isEX.value != "true" && form.isEX.value != "false"){
 		alert("Error: The card must be true or false for the EX input!");
 		form.isEX.focus();
 		return false;
 	}
 	
-	if(form.isMega.value != "true" || form.isMega.value != "false"){
+	if(form.isMega.value != "true" && form.isMega.value != "false"){
 		alert("Error: The card must be true or false for the Mega input!");
 		form.Mega.focus();
 		return false;
@@ -71,10 +71,10 @@ function checkForm(form)
 <p>Card Info:</p>
 Name: <input type="text" name="name" size="20" th:field="*{name}"><br />
 Price: <input type="text" name="price" size="20" th:field="*{price}"><br />
-Is the card a jumbo: <input type="text" name="isJumbo" size="20" th:field="*{isJumbo}"><br />
-Is the card a GX: <input type="text" name="isGX" size="20" th:field="*{isGX}"><br />
-Is the card a EX: <input type="text" name="isEx" size="20" th:field="*{isEX}"><br />
-Is the card a Mega: <input type="text" name="isMega" size="20" th:field="*{isMega}"><br />
+Is the card a jumbo: <input type="text" name="isCardJumbo" size="5" th:field="*{isCardJumbo}"><br />
+Is the card a GX: <input type="text" name="isGX" size="5" th:field="*{isGX}"><br />
+Is the card a EX: <input type="text" name="isEx" size="5" th:field="*{isEX}"><br />
+Is the card a Mega: <input type="text" name="isMega" size="5" th:field="*{isMega}"><br />
 
 
 <input name= "submit" type="submit" value="submit"/>
