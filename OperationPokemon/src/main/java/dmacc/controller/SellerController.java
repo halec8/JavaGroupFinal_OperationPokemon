@@ -35,6 +35,10 @@ public class SellerController {
 	@Autowired
 	CardRepository cardRepo;
 	@GetMapping("/")
+	public String login (Model model) {
+		return "login";
+	}
+	@PostMapping("logininput")
 	public String index (Model model) {
 		return "index";
 	}

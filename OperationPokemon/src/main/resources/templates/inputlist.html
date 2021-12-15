@@ -5,9 +5,11 @@
 <title>Input a New List of Cards</title>
 </head>
 <body>
-<form name="form" th:object="${newSCL}" th:action="/cardController/addSellerList.java"  method=POST>
+<form name="otherForm" th:object="${newSeller}">
 Seller Name: <input type="text" name="name" >
 Seller Phone Number: <input type="text" name="phoneNumber" >
+</form>
+<form name="form" th:object="${newSCL}" th:action="/cardController/inputlist"  method=POST>
 <select name ="allCardsToAdd" multiple size = "20">
 <th:foreach items = "${requestScope.allCardsToAdd}" var ="currentcard">
 <option value = "${currentcard.id}, ${currentcard.name}, ${currentcard.price}, ${currentcard.isEX}, ${currentcard.isGX}, ${currentcard.isMega}, ${currentcard.isJumbo}"> </option>

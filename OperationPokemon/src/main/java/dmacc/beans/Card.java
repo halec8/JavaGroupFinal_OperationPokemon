@@ -1,6 +1,5 @@
 package dmacc.beans;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
