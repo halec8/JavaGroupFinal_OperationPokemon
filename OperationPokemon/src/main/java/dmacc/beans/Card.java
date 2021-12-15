@@ -24,13 +24,13 @@ public class Card {
 	private long id;
 	private double price;
 	private String name;
-	//private int hp;
-	private String pokemonType;
-	private boolean isCardJumbo;
+	private int hp;
+	private String pokemonType;	
 	private String cardType;
-	private boolean isGX;
-	private boolean isEX;
-	private boolean isMega;
+	private String isCardJumbo;
+	private String isGX;
+	private String isEX;
+	private String isMega;
 	//List <Move> moveList;
-	private String ability;
+	//private String ability;
 }
